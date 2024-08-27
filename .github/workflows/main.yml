@@ -25,5 +25,6 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           echo ${{ env.TEST }}
+          echo ${{ vars.TEST }}
           echo $ENVIRONMENT_STAGE
           echo ${{ vars.ENVIRONMENT_STAGE }}
