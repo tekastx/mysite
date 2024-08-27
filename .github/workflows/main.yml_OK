@@ -1,0 +1,16 @@
+name: Actual deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  actual_deploy:
+    strategy:
+      fail-fast: true
+      matrix:
+        target: [ testing, production ]
+    uses: ./.github/workflows/deploy.yml
+    with:
+      target_env: ${{ matrix.target }}
