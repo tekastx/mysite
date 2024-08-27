@@ -1,20 +1,16 @@
-name: Push to ECR
+name: Actual deploy
 
 on:
   push:
     branches:
       - main
 
-env:
-  AWS_REGION: "eu-central-1"                   
-  ECR_REPOSITORY: nginx
-
 jobs:
   actual_deploy:
     strategy:
       fail-fast: true
       matrix:
-        target: [ production, testing ]
+        target: [ testing, production ]
     uses: ./.github/workflows/deploy.yml
     with:
-      target_env: ${{ matrix.target }}
+      target_env: ${ { matrix.target } }
