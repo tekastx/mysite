@@ -24,8 +24,10 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           echo ${{ vars.TEST }}
-        strategy:
-          fail-fast: true
-          matrix:
-            target: [ production, testing ]
+  actual_deploy:
+    needs: deploy
+    strategy:
+      fail-fast: true
+      matrix:
+        target: [ production, testing ]
 
