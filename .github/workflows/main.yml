@@ -13,4 +13,4 @@ jobs:
         target: [ testing, production ]
     uses: ./.github/workflows/deploy.yml
     with:
-      target_env: ${ { matrix.target } }
+      target_env: ${{ matrix.target }}
