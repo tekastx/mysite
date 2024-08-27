@@ -8,12 +8,13 @@ on:
 env:
   AWS_REGION: "eu-central-1"                   
   ECR_REPOSITORY: nginx
+  ENVIRONMENT_STAGE: production
 
 jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    environment: testing
+    environment: ${{ env.ENVIRONMENT_STAGE }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
