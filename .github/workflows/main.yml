@@ -13,7 +13,7 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    environment: ${{ vars.TEST }}
+    environment: testing
     steps:
       - name: Checkout
         uses: actions/checkout@v4
