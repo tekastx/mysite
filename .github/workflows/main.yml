@@ -10,7 +10,9 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        target: [ testing, production ]
+        include:
+          - target: testing
+          - target: production
     name: Deploy
     runs-on: ubuntu-latest
     environment: ${{ matrix.target }}
