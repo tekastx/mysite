@@ -10,7 +10,7 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-		environment: ${{ inputs.target_env }}
+    environment: ${{ inputs.target_env }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
